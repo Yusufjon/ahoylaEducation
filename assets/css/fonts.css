@@ -1,0 +1,16 @@
+/* Fonts */
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url(../fonts/Gilroy-Regular.ttf) format("truetype");
+  src: url(../fonts/Gilroy-Regular.woff) format("woff");
+}
+  @font-face {
+font-family: "Gilroy-Black";
+src: url(../fonts/Gilroy-Black.ttf) format("truetype");
+src: url(../fonts/Gilroy-Black.woff) format("woff");
+}
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url(../fonts/Gilroy-Bold.ttf) format("truetype");
+  src: url(../fonts/Gilroy-Bold.woff) format("woff");
+}

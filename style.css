@@ -1,0 +1,3716 @@
+@font-face {
+    font-family: 'Gilroy';
+      src: url('assets/fonts/Gilroy-Regular.eot');
+      src: local('Gilroy Regular'), local('Gilroy-Regular'),
+      url('assets/fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+          url('assets/fonts/Gilroy-Regular.woff2') format('woff2'),
+          url('assets/fonts/Gilroy-Regular.woff') format('woff'),
+          url('assets/fonts/Gilroy-Regular.ttf') format('truetype');
+       font-weight: normal;
+       font-style: normal;
+       font-display: swap;
+   }
+   @font-face {
+       font-family: 'Gilroy';
+       src: url('assets/fonts/Gilroy-Bold.eot');
+       src: local('Gilroy Bold'), local('Gilroy-Bold'),
+       url('assets/fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+       url('assets/fonts/Gilroy-Bold.woff2') format('woff2'),
+       url('assets/fonts/Gilroy-Bold.woff') format('woff'),
+       url('assets/fonts/Gilroy-Bold.ttf') format('truetype');
+       font-weight: bold;
+       font-style: normal;
+       font-display: swap;
+   }
+   @font-face {
+       font-family: 'Gilroy';
+       src: url('assets/fonts/Gilroy-Black.eot');
+       src: local('Gilroy Black'), local('Gilroy-Black'),
+           url('assets/fonts/Gilroy-Black.eot?#iefix') format('embedded-opentype'),
+           url('assets/fonts/Gilroy-Black.woff2') format('woff2'),
+           url('assets/fonts/Gilroy-Black.woff') format('woff'),
+           url('assets/Gilroy-Black.ttf') format('truetype');
+       font-weight: 700;
+       font-style: normal;
+       font-display: swap;
+   } 
+   /* Font awesome classes */
+   @font-face {
+       font-family: 'Font Awesome 5 Brands';
+       font-style: normal;
+       font-weight: 400;
+       font-display: block;
+       src: url("assets/fontawesome/webfonts/fa-brands-400.eot");
+       src: url("assets/fontawesome/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("assets/fontawesome/webfonts/fa-brands-400.woff2") format("woff2"), url("assets/fontawesome/webfonts/fa-brands-400.woff") format("woff"), url("assets/fontawesome/webfonts/fa-brands-400.ttf") format("truetype"), url("assets/fontawesome/webfonts/fa-brands-400.svg#fontawesome") format("svg"); }
+       .fab {
+       font-family: 'Font Awesome 5 Brands';
+       font-weight: 400; }
+   @font-face {
+     font-family: 'Font Awesome 5 Free';
+     font-style: normal;
+     font-weight: 900;
+     font-display: block;
+     src: url("assets/fontawesome/webfonts/fa-solid-900.eot");
+     src: url("assets/fontawesome/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("assets/fontawesome/webfonts/fa-solid-900.woff2") format("woff2"), url("assets/fontawesome/webfonts/fa-solid-900.woff") format("woff"), url("assets/fontawesome/webfonts/fa-solid-900.ttf") format("truetype"), url("assets/fontawesome/webfonts/fa-solid-900.svg#fontawesome") format("svg"); }
+   
+   .fa,
+   .fas {
+     font-family: 'Font Awesome 5 Free';
+     font-weight: 900; }
+    
+     .fa.disabled,
+     .fa[disabled],
+     .disabled > .fa,
+     [disabled] > .fa {
+       opacity: 0.5;
+        cursor: not-allowed;
+       pointer-events: none;
+     }
+     .control-buttons{
+         margin-left: -20px;
+     }
+  
+      .disabled{
+        opacity: 0.5;
+        cursor: not-allowed;
+       pointer-events: none;
+      }
+   
+     /* Font awesome classes End*/
+   
+   /* Containers */
+   body{
+       box-sizing: border-box;
+       -moz-box-sizing: border-box;
+   }
+   html{
+       -webkit-font-smoothing: subpixel-antialiased !important;
+   }
+   .container {
+       -webkit-box-sizing: border-box;
+       box-sizing: border-box;
+       min-width: 300px;
+   }
+   
+   
+   /* ---------------------------------------------------
+       SIDEBAR STYLE
+   ----------------------------------------------------- */
+   
+   #sidebar {
+    width:375px;
+    position: fixed;
+    top: -20;
+    left: -380px;
+    height: 100vh;
+    z-index: 999;
+    background: #F8F8F6;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+
+   #sidebar.active {
+       left: 0; 
+   
+   }
+   #sidebar #active{
+       background-image: none;
+   }
+   
+   #dismiss {
+       width: 35px;
+       height: 35px;
+       line-height: 20px;
+       text-align: center;
+       color: #303C4A;
+       position: absolute;
+       top: 0;
+       right: 92%;
+       cursor: pointer;
+       -webkit-transition: all 0.1s;
+       -o-transition: all 0.1s;
+       transition: all 0.1s;
+   }
+   
+   #dismiss:hover {
+       background: #fff;
+       color: #7386D5;
+   }
+   
+   .overlay {
+       display: none;
+       position: fixed;
+       width: 100vw;
+       height: 100vh;
+       background: rgba(0, 0, 0, 0.7);
+       z-index: 998;
+       opacity: 0;
+       transition: all 0.5s ease-in-out;
+   }
+   .overlay.active {
+       display: block;
+       opacity: 1;
+   }
+   
+   
+   
+   #sidebar ul.components {
+       padding:8px 0 8px 0;
+       border-bottom: 1px solid #47748b;
+   }
+   #sidebar ul{
+       padding: 5px 0 7% 0;
+       border-bottom: 1px solid #47748b;
+   }
+   
+   
+   
+   #sidebar ul li a {
+       font-size: 16px;
+       display: block;
+       color: #303C4A;
+       padding: 5px;
+       background-image:url("images/line.png");
+       background-repeat: no-repeat;
+       background-position: right center;
+      
+      
+   }
+   .mobile-menu{
+       order:0;
+   }
+   .li-image{
+       margin-left: 0;
+   }
+   
+   
+   
+   #sidebar ul li.active>a,
+   a[aria-expanded="true"] {
+       color: #303C4A;
+       font-weight: bold;
+       padding: 5px;
+    
+   }
+   
+   
+   a[data-toggle="collapse"] {
+       position: relative;
+   }
+   
+   .dropdown-toggle::after {
+       display: block;
+       position: absolute;
+       top: 50%;
+       right: 20px;
+       transform: translateY(-50%);
+   }
+   
+   ul ul a {
+       font-size: 0.9em !important;
+       padding-left: 30px !important;
+   
+    
+   }
+   
+   ul.CTAs {
+       padding: 20px;
+   }
+   
+   ul.CTAs a {
+       text-align: center;
+       font-size: 0.9em !important;
+       display: block;
+       border-radius: 5px;
+       margin-bottom: 5px;
+   }
+   
+   a.download {
+       background: #fff;
+       color: #7386D5;
+   }
+   
+   a.article,
+   a.article:hover {
+       background: #6d7fcc !important;
+       color: #fff !important;
+   }
+    .navbar-default, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+         background-color: transparent;
+         border-color: transparent;
+        color:#fff;
+        outline: 0;
+     }
+   
+   /* End */
+   
+   .container-fluid {
+       -webkit-box-sizing: border-box;
+       box-sizing: border-box;
+       min-width: 300px;
+       padding: 20px;
+       width: 90%;
+       margin: auto;
+   }
+   
+   .section-container {
+       width: 60%;
+       margin: auto;
+   }
+   
+   /* End */
+   
+   /* Navbar Area */
+   nav .navbar .navbar-brand{
+   width: 100%;
+   }
+   
+   nav .navbar-image{
+       width: 120px;
+       margin: auto;
+      
+   }
+   nav #navbar-mobile{
+       display: none;
+   }
+   
+   
+   
+   #nav-link {
+       display: none;
+   }
+   
+   .nav-item .nav-link {
+       font-size: 16px;
+       color: black;
+       font-weight: 700;
+       padding: 0 10px;
+       cursor: pointer;
+   }
+   .nav-item:hover .nav-link {
+
+    color: red;
+}
+   
+   .dropdown:hover .dropdown-menu{
+    display: block;
+    color: red;
+}
+   
+   .navbar .navbar-brand {
+       width: auto;
+         
+   }
+   
+   .nav-item .profile-rounded {
+       border-radius: 50%;
+       width: 30px;
+       height: 30px;
+       margin-right: 8px;
+   }
+   
+
+
+
+
+
+   .aboutLink {
+       color: black;
+       text-decoration: underline;
+       margin-top: 15px;
+       padding-bottom: 15%;
+   }
+   
+   .SeeTheCourse {
+       color: black;
+       background: #FFD475;
+       width: 180px;
+       height: 50px;
+       border-radius: 25px;
+       border: none;
+       font-weight: bold;
+       margin-top: 15px;
+       cursor: pointer;
+       font-family: 'Gilroy';
+   }
+   .SeeTheCourse a{
+   text-decoration:none;
+   color:black;
+   }
+   
+   
+   .SeeTheCourse:hover {
+       color: black;
+       background: #FFC340;
+       width: 180px;
+       height: 50px;
+       border-radius: 25px;
+       border: none;
+       font-weight: 600;
+       margin-top: 15px;
+       cursor: pointer;
+   }
+   
+   /* End Navbar Area */
+   
+   /* HomePage */
+   
+   .MainLanding {
+       background: url("images/homepage.png");
+       background-size: 25%;
+       background-position:15% 50%;
+       background-repeat: no-repeat;
+       height: 70vh;
+   
+      }
+   
+   .MainLanding h1 {
+       width: 60%;
+       margin-top: 5rem;
+     font-size: 48px;
+       text-align: center;
+       font-family: 'Gilroy';
+       font-weight: 700;
+       font-style: normal;
+       color: #303C4A;
+   
+       
+   }
+   
+   .landingImage {
+       width: 100%;
+       height: auto;
+   }
+   
+   .MethodType {
+       background: rgb(255, 197, 208);
+   }
+   
+   .methodHeading {
+       margin-top: 10%;
+       text-align: center;
+       padding-bottom: 10px;
+       font-family: 'Gilroy';
+       font-size: 40px;
+       font-weight: bold;
+       font-style: normal;
+       
+   }
+   
+   .MethodType p {
+       text-align: center;
+       width: 80%;
+       font-family: 'Gilroy';
+       font-size: 16px;
+       color: #303C4A;
+       font-weight: normal;
+       font-style: normal;
+   }
+   
+   .MethodType .card {
+       width: 300px;
+       height: 400px;
+       margin: 2% 2% 2% 2%;
+       border-radius: 15px;
+       padding-top: 4%;
+   }
+   
+   
+   
+   
+   
+   
+   .card {
+       width: 300px;
+   }
+   
+   .card .card-img-top {
+       width: 130px;
+       height: 120px;
+       align-self: center;
+   }
+   
+   .card .card-text {
+       width: 100%;
+       font-family:'Gilroy';
+       font-size: 14px;
+       color:  #303C4A,100%;
+       font-weight: normal;
+       font-style: normal;
+   }
+   
+   .card .card-title {
+       width: 100%;
+       font-family: 'Gilroy';
+       font-size: 22px;
+       color: #303C4A;
+       font-weight: bold;
+       font-style: normal;
+     
+   }
+   
+   /* End HomePage */
+   
+   /* studyZone */
+   
+   .studyZone {
+       background: url("images/banner2.jpg");
+       background-size: cover;
+       background-position: center center;
+       height: auto;
+       padding-bottom: 5%;
+   }
+   
+   .studyZone h1 {
+       font-size: 48px;
+       font-weight: 700;
+       font-style: normal;
+       padding-top: 18%;
+       font-family: "Gilroy";
+   }
+   
+   .studyZone h2 {
+       font-size: 28px;
+       font-size: 28px;
+       width: 600px;
+       font-family: "Gilroy";
+       color: #303C4A, 100%;
+       font-weight: bold;
+       font-style: normal;
+   }
+   
+   .courseBenifits {
+       background: #FFD475;
+       padding-bottom: 5%;
+       height: auto;
+   }
+   
+   .courseBenifits h2 {
+       font-size: 30px;
+       text-align: center;
+       font-weight: bold;
+       font-style: normal;
+       padding-top: 3%;
+       font-family: 'Gilroy';
+       width: 60%;
+   }
+   
+   .courseBenifits img {
+       background: none;
+       width: 15%;
+   }
+   
+   .courseBenifits h3 {
+       text-align: center;
+       font-size: 22px;
+       font-family: 'Gilroy';
+       font-weight: bold;
+       font-style: normal;
+   }
+   
+   .courseBenifits p {
+       font-size: 14px;
+       text-align: center;
+       font-family: 'Gilroy';
+       color:#303C4A;
+       width: 80%;
+       margin:auto;
+       font-weight: normal;
+       font-style: normal;
+   }
+   
+   .educationProcess h2 {
+       text-align: center;
+       padding-top: 5%;
+       padding-bottom: 5%;
+       font-family: 'Gilroy';
+       font-weight: bold;
+       font-style: normal;
+      
+   }
+   
+   .educationProcess {
+       background: #F8F8F6;
+       padding-bottom: 5%;
+   }
+   
+   .educationProcess .card {
+       width: 100%;
+   }
+   
+   .educationProcess .card-text {
+       text-align: center;
+       font-family: 'Gilroy';
+       font-size: 14px;
+       font-weight: normal;
+       font-style: normal;
+   }
+   .educationProcess .card-img-top {
+      width: 130px;
+      height: 120px;
+   }
+   
+   .goToCourse {
+       width: auto;
+       height: 44px;
+       border-radius: 100px;
+       background: #4C87C7;
+       padding:12px 24px;
+       color: white;
+       border: none;
+       font-size: 12px;
+       font-weight: 700;
+       margin-top: 3%;
+       cursor: pointer;
+       text-align:center;
+   }
+   .goToCourse a{
+    text-decoration:none;
+    color:white;
+   }
+   
+   .goToCourse:hover {
+       background-color:  #5D80A6;
+   }
+   
+   .aboutInstructor {
+       background: rgba(255, 255, 255, 0.356);
+       padding-top: 5%;
+       height: auto;
+       padding-bottom: 5%;
+   }
+   
+   .aboutInstructor h1 {
+       margin-top: 30%;
+       font-family: 'Gilroy';
+       font-weight: 700;
+       font-style: normal;
+   }
+   
+   .aboutInstructor h1, h3, p {
+       text-align: left;
+       max-width: 100%;
+   
+   }
+   
+   .aboutInstructor h3 {
+       font-size: 17px;
+       padding-bottom: 5%;
+       font-family: 'Gilroy';
+       font-weight: bold;
+       font-style: normal;
+   }
+   
+   .aboutInstructor img {
+       width: 100%;
+       height: auto;
+       margin-left: 10%;
+   }
+   
+   .aboutInstructor p {
+       font-size: 15px;
+       font-family: 'Gilroy';
+       font-weight: normal;
+       font-style: normal;
+   }
+   
+   .courseTarget {
+       height: auto;
+       padding-top: 5%;
+       padding-bottom: 5%;
+       background: #fff;
+   }
+   
+   .courseTarget h2 {
+       text-align: center;
+       padding-bottom: 5%;
+       font-size: 40px;
+       font-family: 'Gilroy';
+       font-weight: bold;
+       font-style: normal;
+   }
+   
+   .courseTarget img {
+       border-radius: 50%;
+       padding-bottom: 5%;
+       align-self: center;
+   }
+   
+   .courseTarget p {
+       width: 280px;
+       text-align: center;
+       font-family: 'Gilroy';
+       font-size: 14px;
+       font-weight: normal;
+       font-style: normal;
+   }
+   
+   .listMenus {
+       padding-bottom: 5%;
+       padding-top: 5%;
+       background: #F8F8F6
+   }
+   
+   .listMenus h3 {
+       font-size: 20px;
+       padding-top: 5%;
+       padding-bottom: 5%;
+       font-size: 18px;
+       width: 100%;
+       font-family: 'Gilroy';
+       font-weight: bold;
+       font-style: normal;
+   }
+   
+   .listMenus p {
+       width: 100%;
+       padding-bottom: 5%;
+       font-size: 14px;
+       font-family: 'Gilroy';
+       font-weight: normal;
+       font-style: normal;
+   }
+   
+   .listItems {
+       width: 85%;
+       margin: auto;
+       
+   }
+   
+   .listItems h2 {
+       text-align: center;
+       width: auto;
+       padding-bottom: 3%;
+       font-size: 40px;
+       font-family: 'Gilroy';
+       font-weight: bold;
+       font-style: normal;
+   
+      
+   }
+   
+   .listItems p {
+       width: auto;
+       text-align: center;
+       font-weight: 600;
+       font-family: 'Gilroy';
+       font-weight: normal;
+       font-style: normal;
+   }
+   
+   .Modules {
+       border-top: 1px solid black;
+   }
+   
+   .testimonialItem {
+       min-height: 450px;
+       background: #bae5e3;
+       border-radius: 15px;
+       width: 300px;
+       padding: 20px 0px 8px 20px;
+       margin: 2% 1rem 0 1rem;
+   }
+   
+   .testimonialItem  .square-rounded{
+       border-radius: 20px;
+     
+   }
+   
+   .testimonials {
+       background: #d7f3f0;
+       padding-top: 2%;
+       padding-bottom: 5%;
+   }
+   
+   .testimonials h1 {
+       text-align: center;
+       font-family: 'Gilroy';
+       margin-right: 2%;
+       font-weight: 700;
+       font-style: normal;
+   }
+   
+   .personBoxText {
+       margin-left: 16px;
+       margin-bottom: 30px;
+       
+   }
+   
+   .personBoxTitle {
+      font-family: 'Gilroy';
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+       font-style: normal;
+   }
+   
+   .personBoxSubtitle {
+       font-size: 10px;
+   
+      
+   }
+   
+   .first-card {
+       max-width: 300px;
+       margin: 15px 25px 0px 0;
+       font-family: 'Gilroy';
+       font-size: 14px;
+       text-align: left;
+       color: #838A94,80%;
+       font-weight: normal;
+       font-style: normal;
+      
+    
+   }
+   
+   .imageBorder {
+       border: solid 1px #e8eaf5;
+   }
+   
+   .startCourse {
+       padding-bottom: 5%;
+       padding-top: 5%;
+       background: #FFD475;
+   }
+   
+   .startCourse p {
+       font-size: 14px;
+       text-align: center;
+       margin-right: 20px;
+       margin-left: 20px;
+       font-family: 'Gilroy';
+       font-weight: normal;
+       font-style: normal;
+   }
+   
+   .studyZoneCourse {
+       color: black;
+       background: #F8F8F6;
+       width: auto;
+       height: 44px;
+       padding:12px 24px 12px 24px;
+       border-radius: 100px;
+       border: none;
+       font-weight: 600;
+       margin-top: 15px;
+       cursor: pointer;
+   }
+   .studyZoneCourse a{
+   text-decoration:none;
+   color:black;
+   }
+   
+   .studyZoneCourse:hover {
+       background:#F3F3EE;
+   }
+   
+   /*End studyZone */
+   
+   /*Lead RegistrationPage*/
+   
+   .leadRegistration {
+       background: #F8F8F6;
+     
+   }
+   
+   
+   #lead{
+       background-image: url("images/consultation.png");
+       background-size:  13%;
+       background-repeat: no-repeat;
+       background-position: 75% 16rem;
+   }
+   
+   #leadBackground{
+       background-image: url("images/enTest.png");
+       background-size:  13%;
+       background-repeat: no-repeat;
+       background-position: 80% 7rem;
+   
+   }
+   
+   .webinarHeading {
+       font-size: 54px;
+       margin-left: 20px;
+       margin-right: 20px;
+       font-family: 'Gilroy';
+       font-weight: 700;
+       text-align: center;
+       margin-top: 40px;
+      
+   }
+   #criterias{
+      margin-bottom: 40px;
+   }
+   
+   
+   .lead h3 {
+       font-weight: bold;
+       font-style: normal;
+       text-align: center;
+       font-family: 'Gilroy';
+       color: #F7B490;
+       font-size: 35px;
+       letter-spacing: -1%;
+       margin-bottom: 20px;
+       margin-top: 10px;
+   }
+   
+   
+   .lead .sub-paragraph{
+       font-size: 8px;
+       font-family: 'Gilroy';
+      font-weight: normal;
+       font-style: normal;
+       margin-left: 20px;
+       text-align: left;
+       
+   }
+   
+   .lead .sub-text{
+       
+       font-size: 8px;
+       font-family: 'Gilroy';
+      font-weight: normal;
+       font-style: normal;
+      margin-left: 22px;
+       text-align: left;
+   }
+   
+   
+   
+   .lead .leadParagraph {
+       font-size: 14px;
+       margin: 0;
+       letter-spacing: 2%;
+       margin-left: 20px;
+        
+   }
+      .lead #instant-result{
+       display: block;
+   }
+   .lead .fa-hourglass-start{
+     margin-right: 0px;  
+     font-size: 16px;
+     position: absolute;
+     right:85%;
+   
+   }
+   .lead .fa-chevron-down{
+    margin-right: 0px;  
+    font-size: 16px;
+    position: absolute;
+    right:85%; 
+   }
+   
+   .fa-user-graduate{
+       margin-right: 8px; 
+   } 
+   .testExpalnation{
+    background-color: #EAF7FC;
+     height: 50vh;
+     background-image: url("images/leadformimage.png");
+     background-size: 147px;
+     background-position:25% 10%;
+     background-repeat: no-repeat;
+     padding-top: 4rem;
+     margin-top: -50px;
+   
+   }
+   .testExpalnation p{
+       width: 400px;
+       margin: auto;
+        font-family: 'Gilroy';
+       font-style: normal;
+       font-size: 16px;
+       padding-top:15px;
+          
+   }
+   .lead .fa-phone{
+    font-size: 16px;
+    position: absolute;
+    right: 85%;
+    
+    }
+    
+    .lead .fa-user-graduate{
+        font-size: 16px;
+        position: absolute;
+        right:88%;
+        
+    
+    }
+    .lead .fa-book{
+        font-size: 16px;
+        position: absolute;
+        right:90%;
+    }
+
+    #validateForm{
+        width: 400px;
+        height: 44px;
+        padding: 12px,24px,12px,24px;
+        background-color: #4C87C7;
+        border-radius: 100px;
+    }
+    
+   
+   /* 
+   form {
+       background: #fff;
+       border-radius: 40px;
+       width: 440px;
+       height: 464px;
+       Padding:40px, 20px, 40px, 20px;
+   } */
+   
+   form input:focus ~ .floating-label,
+   input:not(:focus):valid ~ .floating-label{
+     top: 8px;
+     bottom: 10px;
+     left: 20px;
+     font-size: 11px;
+     opacity: 1;
+
+   }
+   .floating-label {
+       position: absolute;
+       pointer-events: none;
+       left: 20px;
+       top: 18px;
+       transition: 0.2s ease all;
+     }
+   
+    form #result{
+        width: 100%;
+    }
+   
+   
+   form #phone {
+       width: 400px;
+       height: 50px;
+       border-radius: 10px;
+       border: none;
+       background: #F8F8F6;
+      
+   }
+    
+   
+   
+   
+   :root {
+       --input-padding-x: .30rem;
+       --input-padding-y: .75rem;
+     }
+     
+     
+     
+     .form-signin {
+       background: #fff;
+       border-radius: 40px;
+       width: 440px;
+       height: 460px;
+       padding:40px,20px,40px,20px;
+     }
+      .leadformimage{
+        display: none;
+   }
+     
+     .form-label-group {
+       position: relative;
+       margin-bottom: 1rem;
+     }
+     
+     .form-label-group > input,
+     .form-label-group > label {
+       padding: var(--input-padding-y) var(--input-padding-x);
+       border: none; 
+    }
+     .form-label-group > select
+     {
+       padding: var(--input-padding-y) var(--input-padding-x) !important;
+     }
+     .form-label-group > button
+     {
+       padding: var(--input-padding-y) var(--input-padding-x) !important;
+     }
+     
+     
+     .form-label-group > select{
+       max-width: 400px;
+       height: 50px !important;
+       border-radius: 10px;
+       padding:10px;
+     }
+     .form-label-group > input{
+       max-width: 400px;
+       height: 50px;
+       border-radius: 10px;
+       border: none;
+       background: #F8F8F6;
+       padding:10px;
+       
+     }
+
+     .form-label-group > button{
+        width: 290px;
+        height: 44px;
+        border-radius: 100px;
+        border: none;
+        padding:12px,24px;
+      }
+      
+     
+     .form-label-group > label {
+       position: absolute;
+       top: 0;
+       left:0;
+        display: block;
+       width: 100%;
+       margin-bottom: 0; /* Override default `<label>` margin */
+       line-height: 1.5;
+       color: #495057;
+       border: 1px solid transparent;
+       border-radius: .25rem;
+       transition: all .1s ease-in-out;
+     }
+     
+     
+     .form-label-group input::-webkit-input-placeholder {
+       color: transparent;
+     }
+     
+     .form-label-group input:-ms-input-placeholder {
+       color: transparent;
+     }
+     
+     .form-label-group input::-ms-input-placeholder {
+       color: transparent;
+     }
+     
+     .form-label-group input::-moz-placeholder {
+       color: transparent;
+     }
+     
+     .form-label-group input::placeholder {
+       color: transparent;
+     }
+     
+ 
+     .colorArea{
+       width: 100%;
+        background-color: #FDF0E9;
+        height: 30vh;
+        padding-bottom:25%;
+        margin-top: -5%;
+   
+    }
+   
+   
+   #error-msg {
+       color: red;
+     }
+     #valid-msg {
+       color: #00C900;
+     }
+     input.error {
+       border: 1px solid #FF7C7C;
+     }
+     .hide {
+       display: none;
+     }
+     
+   
+
+   .formHeading {
+       font-family: "Gilroy";
+       font-size: 30px;
+       line-height: 33px;
+       letter-spacing: -1%;
+       align-items: center;
+       text-align: center;
+       width: 400px;
+       font-weight: 550;
+       margin-top: 40px;
+       font-weight: 700;
+       font-style: normal;
+       
+   }
+   
+   .formParagraph {
+       font-family: 'Gilroy';
+       font-size: 16px;
+       line-height: 24px;
+      text-align: center;
+       width: 275px;
+       letter-spacing: 2%;
+       font-weight: normal;
+       font-style: normal;
+   }
+   
+   
+   
+   
+   .RegistrationForm .leadImage {
+       height: 350px;
+       width: 300px;
+       margin-left: 35%;
+   }
+   
+   .RegistrationForm {
+       margin-top: 2%;
+   }
+
+
+
+
+   
+   .RegistrationForm p {
+       font-family: 'Gilroy';
+       font-size: 16px;
+       width: 400px;
+       letter-spacing: 2%;
+       line-height: 24px;
+       color: #303C4A;
+       font-weight: normal;
+       font-style: normal;
+   }
+   
+   #RegistrationRow {
+       width: 100%;
+      
+     
+   }
+
+   .RegistrationForm .container-fluid{
+       width: 100%;
+     margin-left: 0;
+     margin-right: 0;
+     padding-right: 0;
+     padding-left: 0;
+
+   }
+   
+   
+   /*End Lead RegistrationPage*/
+   
+   
+   /*En-Beginner page*/
+
+   .beginnerEnglish{
+      background-color: #012A30;
+       height: auto;
+       background-image: url("images/vladimir1.png");
+       background-repeat: no-repeat;
+       background-position: 85% bottom;
+       background-size: 25%;
+       padding-bottom: 80px;
+   }
+   .beginnerEnglish .SeeTheCourse{
+   padding: 12px 24px 12px 24px;
+   width:auto;
+ }
+
+   
+
+
+.bannerHeader{
+font-weight: bold;
+font-size: 72px;
+line-height: 110%;
+letter-spacing: -0.01em;
+color: #FFFFFF;
+margin: 30px 0px;
+width: 920px;
+font-family: 'Gilroy';
+}
+
+.h2Header{
+font-style: bold;
+font-size: 32px;
+font-family: 'Gilroy';
+line-height: 110%;
+color: #AEB1B8;
+margin: 30px 0px;
+width: 418px;
+}
+.startPremium{
+    width: auto;
+       height: 44px;
+       border-radius: 100px;
+       background: #FFC340;
+       padding:12px 24px;
+       color: #303C4A;
+       border: none;
+       font-size: 12px;
+       font-weight: 700;
+       font-family: 'Gilroy';
+       font-weight: bold;
+       margin-top: 3%;
+       cursor: pointer;
+       text-align:center;
+       
+  
+}
+.comfortHeader{
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 52.8px;
+    text-align: center;
+    color: #303C4A;
+    font-family: 'Gilroy';
+   
+}
+.comfortEnglish{
+    background: #f8f8f6;
+    margin-top: 120px;
+  
+}
+
+#comforEnglish2{
+   padding-bottom: 50px;
+}
+
+.card-beginner{
+  padding: 20px 0px 20px 0px;
+  border-radius: 20px;
+  height:190px;
+  width:300px;
+  background: #FFFFFF;
+
+
+
+}
+.comfortEnglish .card-text{
+    font-family: 'Gilroy';
+
+}
+
+.headLiner{
+    padding-top:135px;
+    background: #f8f8f6;
+}
+
+.headLiner2{
+    background: #f8f8f6;
+    margin-top: 70px;
+
+
+}
+
+
+.headlinerCenter{
+    width: 960px;
+    height: 570px;
+    border-radius: 40px;
+    background-size: cover;
+    background: url("images/headlinergirl.jpg");
+    background-size: cover;
+    background-position: center;
+ 
+    
+}
+
+.register{
+    background-color: #FFFFFF;
+    padding:12px 24px;
+    border-radius: 100px;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: 'Gilroy';
+}
+.register:hover{
+    background-color: #F3F3EE;
+ 
+}
+
+.blackHeader{
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    color: #303C4A;
+}
+.whiteHeader{
+    color: #FFFFFF;
+    font-size: 32px;
+    width: 712px;
+    margin: auto;
+    font-family: 'Gilroy';
+}
+
+
+
+.midContent{
+    margin-top: 80px;
+    background: #f8f8f6;
+}
+
+.pinkContent{
+    background-color: #FDF1F6;
+    width: 960px;
+    height: 570px;
+    border-radius: 40px;
+    padding-top:15px;
+    align-self: center;
+   
+    /* background-image: url("images/coaching.png");
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position: -85px top; */
+
+}
+.pinkContent h1{
+    font-size:48px;
+    width: 548px;
+    padding-top: 30px;
+    font-family: 'Gilroy';
+    font-weight: bold;
+}
+
+
+.pinkContent .image{
+    margin-left: -15%;
+    margin-top: -20px;
+}
+.pinkContentparagraph{
+    font-size: 16px;
+    width: 600px;
+    font-family: 'Gilroy';
+
+}
+.lowerParagraph{
+    font-size: 14px;
+    width: 549px;
+    padding-top: 20%;
+    font-family: 'Gilroy';
+   
+        
+}
+.lowerParagraph2{
+    font-family: 'Gilroy';
+}
+
+.fa-thumbs-up{
+  
+    margin-left:-30px;
+    color: #E870A5;
+    margin-right: 10px; 
+}
+
+.prices{
+    
+    background: #f8f8f6;
+    margin-top: 120px;
+}
+
+.prices .SeeTheCourse{
+    margin-top:30px ;
+    margin-bottom: 45px;
+    width:253px;
+
+   
+}
+
+.prices .sale{
+    position: absolute;
+    top: -9%;
+    left: 28%;
+    background-color: #2FAFE5;
+    width: 135px;
+    height: 31px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    text-align: center;
+    padding-top: 2px;
+  
+   
+}
+.prices .card-body{
+    position: relative;
+}
+
+.prices .card{
+    padding:40px 0px 70px 0px;
+    border-radius: 40px;
+    background: #FFFFFF;
+    border: none;
+    margin-right: 20px;
+  
+
+}
+.prices #biggerSize{
+    font-size: 48px;
+}
+.prices .card-title{
+    font-size: 32px;
+    line-height: 35px;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    
+}
+
+.economyTariff{
+    color: #DE5F66;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0;
+    font-family: 'Gilroy';
+}
+.prices #card-height{
+    line-height: 0;
+    padding-bottom: 15px;
+    color: #838A94;
+}
+.prices .card-text{
+    font-size: 16px;
+    font-family: 'Gilroy';
+    font-weight: normal;
+ 
+}
+
+.prices #lowerbodyparagraph{
+    border-bottom:  1px solid #D5F0F1;
+    line-height: 24px;
+    letter-spacing: 2%;
+    text-align: left;
+    font-family: 'Gilroy';
+    font-weight: normal;
+}
+
+.policy{
+    padding-top: 50px;
+    background: #f8f8f6;
+}
+
+.policy h3 p{
+    width: 246px;
+    font-family: 'Gilroy';
+}
+.policy h4{
+    font-size: 18px;
+    letter-spacing: 4%;
+    line-height: 21px;
+    color: #303C4A;
+    font-family: 'Gilroy';
+    font-weight: 600;
+}
+
+.policy p{
+   font-size: 14px; 
+   width: 246px;
+   font-family: 'Gilroy';
+}
+
+
+
+.feedbacks{
+    padding-top: 50px;
+  
+    
+    height: auto;
+}
+
+
+
+.carousel-cell {
+    width: 300px;
+    height: 200px;
+    background-image: url("../images/card1.png");
+     border-radius: 20px;
+
+    background: #FFFFFF;
+    padding: 20px 0px 20px 0px;
+    margin-right: 10px;
+   
+  }
+  .carousel{
+      height: 100%;
+  }
+  
+  /* cell number */
+  .carousel-cell:before {
+    display: block;
+    text-align: center;
+ 
+    line-height: 0px;
+    font-size: 80px;
+    color: white;
+    font-family: 'Gilroy';
+  }
+  .cell {
+    width:306px;
+    height:600px;
+    margin-right: 20px;
+    background-image: url("../images/card1.png");
+     border-radius: 40px;
+text-align: left;
+    background: transparent;
+      position: relative;
+   
+   
+  }  
+   .carouselLeft2{
+      margin-left: 0;
+  } 
+   .teacher-profile #carouselEdge{
+      margin-left:-20px !important;
+  } 
+  /* .cell.is-selected {
+    background: #ED2;
+  } */
+
+video{
+    width:305px;
+    height:545.54px; 
+    border-radius: 40px;
+
+}
+.js-player{
+    width:305px;
+    height:545.54px; 
+    border-radius: 40px;
+    margin-bottom: 60px;
+    
+}
+.plyr__video-wrapper{
+    background: transparent!important;
+}
+.plyr__controls{
+    background: transparent!important;
+}
+.plyr__poster{
+    height: 0!important;
+}
+
+.plyr--video{
+    background: transparent!important;
+}
+.plyr__control--overlaid{
+    background: #FFFFFF!important;
+    color: black!important;
+    
+}
+
+  /* cell number */
+  .cell:before {
+    display: block;
+    text-align: center;
+
+    line-height: 0px;
+    font-size: 80px;
+    color: white;
+  }
+
+  .headlinerConsultation{
+    width: 960px;
+    height: 570px;
+    border-radius: 40px;
+    background-size: cover;
+    background-color: #012A30;
+    background-image: url("images/vladimir1.png");
+    background-repeat: no-repeat;
+    background-position: 110% bottom;
+    background-size: 43%;
+    
+}
+
+.headlinerConsultation .whiteHeader{
+    color: #FFFFFF;
+    font-size:53px;
+    width: 712px;
+    margin: auto;
+    font-family: 'Gilroy';
+    font-weight: bold;
+}
+.greyHeader{
+    font-size: 32px;
+    color: #AAE1E3;
+    line-height: 35px;
+    padding-top: 20px;
+    width: 712px;
+    margin: auto;
+    font-family: 'Gilroy';
+    font-weight: bold;
+
+}
+
+
+
+
+
+ul.accordion-list {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	padding: 20px 0px 0px 0px;
+	margin: 0;
+	list-style: none;
+	background-color:none;
+}
+
+ul.accordion-list li {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	background-color: #FFF;
+	padding: 20px 20px 20px 20px;
+	margin: 0 auto 15px auto;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+ul.accordion-list li.active h3:after {
+	
+    content: "\2212";
+    border-radius: 50%;
+}
+
+ul.accordion-list li h3 {
+	font-weight: 700;
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	padding: 0 0 0 0;
+	margin: 0;
+	font-size: 16px;
+	letter-spacing: 0.01em;
+	cursor: pointer;
+    font-family: 'Gilroy';
+    font-weight: normal;
+    color: #838A94;
+}
+
+ul.accordion-list li h3:after {
+    content: "\2b";
+    font-family: 'FontAwesome';
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #fff;
+	transition: all 0.3s ease-in-out;
+	font-size: 18px;
+    background-color: #DADADA;
+    border-radius: 50%;
+    height: 21px;
+    line-height: 21px;
+    width: 21px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+ul.accordion-list li div.answer {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+ul.accordion-list li div.answer p {
+	position: relative;
+	display: block;
+	font-weight: 300;
+	padding: 10px 0 0 0;
+	cursor: pointer;
+	line-height: 150%;
+	margin: 0 0 0px 0;
+	font-size: 14px;
+    font-family: 'Gilroy';
+    font-weight: normal;
+}
+
+
+  .comfortEnglish .container-fluid {
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: auto;
+  }
+  .midContent .container-fluid {
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: auto;
+  }
+  .feedbacks .container-fluid {
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: auto;
+  }
+  .headLiner .container-fluid {
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: auto;
+  }
+  .headLiner2 .container-fluid {
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: auto;
+  }
+  
+
+/*En-Beginner page End*/
+
+
+
+/*new-homepage begin*/
+
+.homepage{
+    
+     background-image: url("images/homepage2.png");
+     background-repeat: no-repeat;
+     background-size:cover;
+     -webkit-background-size: cover; /* For WebKit*/
+     -moz-background-size: cover;    /* Mozilla*/
+     -o-background-size: cover;      /* Opera*/
+   height: 630px;  
+ }
+
+ #navbarArea{
+     width: 960px;
+     margin: auto;
+ }
+ #container-width{
+    width: 960px;
+    margin: auto;
+    overflow: hidden;
+ }
+
+ .homepage h1{
+    font-style:normal;
+    font-family: 'Gilroy';
+     font-weight: bold;
+     color: #303C4A;
+     font-size:72px;
+     line-height: 79px;
+     width: 960px;
+     margin-top: 30px;
+
+ }
+ .homepage h3{
+    font-style:normal;
+    font-family: 'Gilroy';
+     font-weight: bold;
+     font-size: 32px;
+     color: #838A94;
+     line-height: 35px;
+     width: 418px;
+     margin-top: 30px;
+     margin-bottom: 50px;
+
+ }
+ .homepage .SeeTheCourse{
+     color: #fff;
+     background: #4C87C7;
+     width: 177px;
+     height: 44px;
+     padding: 12px,24px;
+     font-size: 14px;
+      }
+  .homepage .SeeTheCourse:hover{
+          background: #5D80A6;
+      }
+
+     .teacher-profile{
+         margin-top: 120px;
+         height:auto;
+      }
+      .teacher-profile .headlinerConsultation{
+        width: 800px;
+        height: 444px;
+        border-radius: 40px;
+        background-size: cover;
+        background-color: #FFC340;
+        background-image: url("images/polina.png");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 43%;
+        padding: 20px;
+        
+    }
+   
+
+
+    .teacher-profile .headlinerConsultation2{
+        width: 800px;
+        height: 444px;
+        border-radius: 40px;
+        background-size: cover;
+        background-color:#012A30;
+        background-image: url("images/vladimir1.png");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 30%;
+        padding: 20px;
+        
+    } 
+
+.teacher-profile .container-fluid{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+.teacher-profile h1{
+    font-style:normal;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #303C4A;
+
+}
+
+
+.teacher-profile h3{
+    font-style:normal;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    margin-top: 20px;
+}
+
+.teacher-profile p{
+    width: 455px;
+    list-style-type:24px;
+    font-size: 16px;
+    letter-spacing: 2%;
+    font-style:normal;
+    font-family: 'Gilroy';
+    font-weight: normal;
+}
+.headlinerConsultation2 h3{
+    font-style:normal;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.headlinerConsultation2 p{
+    width: 455px;
+    list-style-type:24px;
+    font-size: 16px;
+    letter-spacing: 2%;
+    font-style:normal;
+    font-family: 'Gilroy';
+    font-weight: normal;
+    color: #FFFFFF;
+}
+.teacher-profile .register{
+    margin: 0 0 0 65%;
+}
+
+.why-ahoyla{
+    margin-top: 120px;
+}
+
+
+.why-ahoyla .card{
+    background-color: #ffffff;
+    width: 800px;
+    height: 336px;
+    border-radius: 40px;
+    padding-top:15px;
+    align-self: center;
+    border:none;
+    margin-top: 50px;
+   
+    /* background-image: url("images/why1.png");
+    background-position: right;
+    background-repeat: no-repeat; */
+
+ 
+
+
+}
+.why-ahoyla .card-body h3{
+    font-size:32px;
+    width: auto;
+    padding-top: 30px;
+    font-family: 'Gilroy';
+    font-weight: bold;
+}
+
+
+.why-ahoyla .card .image{
+  width: 400px;
+  height: auto;
+  margin-top: -33%;
+  margin-left:-40%;
+
+}
+.why-ahoyla .card .image3{
+    width: 400px;
+    height: auto;
+    margin-top: -34%;
+    margin-left:-30%;
+  
+  }
+
+.why-ahoyla .card .image2{
+    width: 400px;
+    height: auto;
+    margin-top:-20%;
+    margin-left: -12px;
+    background: none;
+
+  }
+  .why-ahoyla .card .image4{
+    width: 282px;
+    height: auto;
+    margin-top:-10%;
+    margin-left: -12px;
+    background: none;
+
+  }
+.why-ahoyla .card-body p{
+    font-size: 16px;
+    width:430px;
+    font-family: 'Gilroy';
+    line-height: 24px;
+   
+
+}
+.bold{
+    font-size: 48px;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    font-style: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #303C4A;
+
+}
+.small-bold{
+    font-size: 14px;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    line-height: 21px;
+    letter-spacing: 2%;
+    text-align: center;
+    color: #5B6370;
+  
+}
+
+
+
+.cell-item {
+    width:800px;
+    height:444px;
+    margin-right: 20px;
+    background-image: url("../images/card1.png");
+     border-radius: 40px;
+
+    background: #FFFFFF;
+      position: relative;
+ 
+   
+   
+  }       
+  .cell-item:before {
+    display: block;
+    text-align: center;
+    line-height: 0px;
+    font-size: 80px;
+    color: white;
+  }
+
+
+  .study-item{
+    width:306.67px;
+    height:388px;
+   border-radius: 20px;
+    background: transparent;
+      position: relative;
+      margin-right: 20px;
+  }
+  .study-item:before{
+    display: block;
+    text-align: center;
+    line-height: 0px;
+    font-size: 80px;
+    color: white;
+  }
+
+.study-programs{
+    margin-top:120px;
+    height:auto;
+
+
+}
+.study-programs .container-fluid{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+
+}
+
+.study-programs h1{
+   text-align: center;
+   margin-bottom: 50px;
+   font-family: 'Gilroy';
+   font-weight: 700;
+   font-style: normal;
+   font-size: 30px;
+   letter-spacing: -0.01em;
+   color: #303C4A;
+}
+.study-programs .card{
+    width: 306px;
+    height: 388px;
+    margin-right: 0;
+    border-radius: 20px;
+    border: none;
+}
+.study-programs .card-img-top{
+    width: 100%;
+    height: 192px;
+}
+.study-programs .card-title{
+text-align: left;  
+font-size: 24px;  
+width:267px ;
+font-family: 'Gilroy';
+font-weight: bold;
+font-style: bold;
+}
+
+
+
+
+
+#feedbacks{
+   height: auto;
+  
+   
+}
+
+ .faq{
+    margin-top:120px;
+    margin-bottom: 80px;
+ 
+     
+ 
+}
+
+.faq h1{
+    font-family:'Gilroy';
+    text-align: center;
+    font-weight: bold;
+    font-style: bold;
+    color: #303C4A;
+}
+.feedbacks .cell p{
+    width: 355px;
+    font-size: 14px;
+    color: black;
+    margin: auto;
+    font-family: 'Gilroy';
+    font-weight: normal;
+    font-style: normal;
+}
+.feedbacks .cell h3{
+
+    margin: 10px auto 5px 25px;
+    font-size: 18px;
+    color: black;
+    font-family: 'Gilroy';
+    font-weight: 500;
+    font-style: bold;
+
+
+}
+
+.secondary-button{
+   padding: 12px 24px 12px 24px;
+   border: 1px solid #303C4A ;
+   border-radius: 100px;
+   background: transparent;
+   height: 44px;
+   text-align: center;
+   font-size: 14px;
+   font-family: 'Gilroy';
+   font-weight: bold;
+   cursor: pointer;
+   margin-bottom: 0px;
+}
+
+.secondary-button:hover{
+    background:#AEB1B8;
+}
+.flickity-prev-next-button:disabled {
+ background: gray;
+  }
+  
+
+/*new-homepage end*/
+
+   
+   /* Icons styling */
+   
+   .fa {
+       padding: 5px;
+       font-size: 45px;
+       width: 35px;
+       height: 35px;
+       text-align: center;
+       text-decoration: none;
+   }
+   
+   .fa:hover {
+       opacity: 0.7;
+   }
+   
+   .fa-facebook {
+       background: none;
+       color: white;
+   }
+   
+   .fa-twitter {
+       background: none;
+       color: white;
+   }
+   
+   .fa-linkedin {
+       background: none;
+       color: white;
+   }
+
+   
+
+.fa-user-shield{
+    color: #FFD475;
+  font-size: 42px;
+}
+
+.fa-undo{
+    color: #FFD475;
+    font-size: 42px;    
+}
+.fa-tenge{
+    font-size: 12px;
+    position: absolute;
+    margin-left: 10px;
+ 
+    
+}
+
+.fa-youtube{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    font-size: 50px;
+    color: red;
+}
+.fa-play{
+    font-size: 16px; 
+    margin-left:10px; 
+}
+
+
+.no-gutters{
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+   
+   /* End styling */
+   
+   /* Need Further Improments */
+   
+   .col-md-2 {
+       font-weight: 700;
+   }
+   
+   .notif {
+       margin-right: 8px;
+       cursor: pointer;
+   }
+   
+   .InitialPart {
+       margin-left: 15%;
+       margin-top: 6%;
+       margin-top: 5px;
+       margin-bottom: 5px;
+   }
+   
+   .InitialPart .heading {
+       font-size: 25px;
+       color: #303C4a;
+   }
+   
+   .row {
+       padding-left: 12px;
+       padding-top: 7px;
+   }
+   
+   #firstNum {
+       margin-right: 5px;
+       font-size: 14px;
+       color: #303C4a;
+   }
+   
+   #secondNum {
+       padding-left: 10px;
+       font-size: 14px;
+       color: #303C4a;
+   }
+   
+   .progressBarrPart {
+       background-color: none;
+       width: 200px;
+       margin-top: 15px;
+   }
+   
+   .progress {
+       background: none;
+       height: 2px;
+   }
+   
+   .percentage {
+       font-size: 14px;
+       position: absolute;
+       left: 40%;
+       margin-top: -15px;
+       right: 50%;
+   }
+   
+   /* End Need Further Improments */
+   
+   /* footer area */
+   
+   
+   .footer-wdget a {
+       color: white;
+   }
+   
+   a:focus, a:hover {
+       text-decoration: none;
+       -webkit-transition: .3s ease;
+       -o-transition: .3s ease;
+       transition: .3s ease
+   }
+   
+   a:focus {
+       outline: 0
+   }
+   
+   img {
+       max-width: 100%
+   }
+   
+   .footer-big {
+       width: 90%;
+       margin: auto;
+   }
+   
+   .footer--light {
+       background: #303C4A;
+   }
+   
+   .footer-big .footer-menu ul li a, .footer-big p, .footer-big ul li {
+       color: #898b96
+   }
+   
+   .footer-menu {
+       padding-left: 48px
+   }
+   
+   /*End footer area */
+   
+   @media only screen and (max-width: 767px) {
+       /*Mobile Navbar */
+       .nav-item #profile-rounded {
+           display: none;
+       }
+       .navbar-collapse.d-none, .navbar-collapse.show {
+           text-align: center;
+       }
+       .navbar-collapse.d-none, .navbar-collapse.show {
+           text-align: center;
+       }
+   
+       .nav-item{
+           font-size: 14px;
+       }
+      
+       #nav-link {
+           display: block;
+       }
+       nav .navbar-image{
+        width: 120px;
+        margin: auto;
+      
+       
+    }
+    nav #navbar-mobile{
+        display: block;
+    }
+    nav #navbar-desktop{
+        display: none;
+    }
+    #navbar-mobile{
+       width: 75%;
+    }
+
+    
+
+
+      
+       /*Mobile Homepage */
+       .MainLanding h1 {
+           font-size: 25px;
+           margin-left: 20px;
+           margin-right: 20px;
+   
+           width: auto;
+          
+       }
+       .MainLanding {
+           background: url("images/Mobile.webp");
+           background-size: 80%;
+           background-position: 13ch 9em;
+           height: 80vh;
+       }
+       .MainLanding .navbar-brand {
+           width: 30%;
+       }
+       .MethodType .card {
+           width: 300px;
+           height: 400px;
+           margin: 2% auto 2% auto;
+       }
+       .methodHeading {
+           margin: 0 20px 0 20px;
+           font-size: 30px;
+           padding-top: 8%;
+       }
+       /*Mobile studyzone */
+       .studyZone h1 {
+           font-size: 30px;
+       }
+       .studyZone .goToCourse {
+           align-self: center;
+       }
+       .studyZone h2 {
+           font-size: 20px;
+           width: 100%;
+       }
+       .aboutInstructor img {
+           margin: 0;
+           padding: 0;
+       }
+       .aboutInstructor h1 {
+           font-size: 25px;
+       }
+       .courseBenifits h1 {
+           font-size: 30px;
+           letter-spacing: 0.1em;
+       }
+       .courseBenifits h2 {
+          width: 100%;
+       }
+       .testimonialItem {
+           width: fit-content;
+           padding:5% 5% 5% 5%;
+           margin: 5% 20px 0 20px;
+       }
+       .testimonialItem .personBoxTitle {
+           margin: 25px 0px 0 0px;
+       }
+       .testimonialItem .first-card {
+           margin: 7px 0 0 10px;
+       }
+       .courseTarget h1 {
+           font-size: 30px;
+       }
+       .courseBenifits img {
+           width: 30%;
+       }
+       .listItems h1 {
+           font-size: 25px;
+       }
+       .startCourse h1 {
+           text-align: center;
+           font-size: 30px;
+       }
+       /*Mobile leadPage */
+       .leadRegistration {
+           background: #F8F8F6;
+           padding-bottom: 5%;
+
+           
+       }
+
+       
+ 
+       #leadBackground{
+             background-size:  40%;
+            background-position: right 7rem;
+       
+       }
+       #criterias{
+           margin-bottom: 2px;
+       }
+       
+     
+   #lead{
+    background-size:  45%;
+    background-position: right 38%;
+
+   }
+   
+       .webinarHeading {
+         font-size: 44px;
+         text-align: left;
+         margin-left: 20px;
+         margin-right: 20px;
+         margin-top: 30px;
+        
+   
+         
+       }
+       .lead .leadParagraph {
+          text-align: left;
+          width: 200px;
+       
+            
+       }
+   
+
+     .lead .sub-text{
+         text-align: left;
+         margin-left: 25px;
+     }
+
+
+
+       .lead .sub-paragraph{
+        margin-left: 30px;
+         width: 183px;
+       }
+    
+      
+       .lead h3 {
+           font-size: 30px;
+           margin-left: 20px;
+           margin-right: 20px;
+           text-align: left;
+       }
+       .leadRegistration nav img {
+           width: 60%;
+           float: left;
+       }
+    
+   
+       .lead #instant-result{
+           display: block;
+       }
+       form h1{
+          width: auto;
+          font-size: 27px;
+          line-height: 33px;
+          text-align: center;
+          margin: 40 0 0 0;
+          
+          
+       }
+       .formHeading{
+           font-size: 25px;
+           text-align: center;
+           width: auto;
+       }
+   
+   
+       .form-label-group > input{
+          
+           max-width: auto;
+           height: 50;
+           border-radius: 10px;
+           border: none;
+           padding:0;
+         }
+         .colorArea{
+          padding-bottom:25%;
+            margin-top: -20%;
+       
+        }
+    
+   form #phone{
+       max-width:100%;
+   }
+       .form-signin {
+        height:100%;
+        width:100%;
+        padding-bottom: 20px;
+      
+   
+         }
+   
+  
+   
+       #RegistrationForm {
+           width: 100%;
+           margin: auto;
+       }
+    
+       .RegistrationForm .leadImage {
+           display: none;
+       }
+       #registrationRow {
+         background-image:none;
+       }
+       .testExpalnation{
+          background-image:none;
+          height: auto;
+          padding-top: 4rem;
+         margin-bottom: -3%;
+         padding-bottom: 2rem;
+         }
+         
+          .testExpalnation p{
+           padding: 0;
+           margin: 0;
+    
+           }
+       .leadformimage{
+           display: block;
+           align-self: center;
+           margin-top: 30px;
+           margin-bottom: 30px; 
+       }
+       
+       .RegistrationForm p {
+           margin-top:2%;
+           font-size: 14px;
+       }
+    
+       .section-container {
+           width: auto;
+       }
+   
+       .sub-paragraph{
+           width: 300px;
+       }
+       
+       .beginnerEnglish{
+           background-size: 65%;
+           height: 90vh;
+           background-position:150% bottom;
+       }
+       
+       .bannerHeader{
+           width: 100%;
+           font-size:48px;
+           padding-right: 20px;
+           padding-left: 20px;
+           padding-top: 60px;
+
+       }
+     
+
+
+       .collapse.dont-collapse-sm {
+        display: block;
+        height: auto !important;
+        visibility: visible;
+       }
+ 
+       .h2Header{
+       width:100%;
+       font-size: 22px;
+       padding-bottom: 40px;
+       padding-right: 20px;
+           padding-left: 20px;
+    
+  
+       }
+    .headLiner{
+        padding-top:0;
+      
+      
+    }
+       .headlinerCenter{
+              background-position:center;
+              background-repeat: no-repeat;
+              background-size: cover;
+       }
+
+       .blackHeader{
+           width: 100%;
+           font-size: 42px;
+          
+       }
+
+       .whiteHeader{
+           width: 100%;
+       }
+  .midContent{
+     
+      padding-bottom: 0;
+  }
+
+  .midContent .image{
+      margin-top: -25%;
+  }
+       .pinkContent{
+           width: 100%;
+           height: 100%;
+           padding-left: 20px;
+           padding-right: 20px;
+           padding-bottom: 40px;
+           padding-top: 15px;
+           margin: 0;
+
+         
+       }
+       .pinkContent h1{
+        width: auto;
+        font-size: 30px;
+        text-align: center;
+        
+    }
+    .pinkContent .pinkContentparagraph{
+        width: auto;
+        font-size: 16px;
+        text-align: center;
+        
+    }
+    .pinkContent .lowerParagraph{
+        width: auto;
+        margin-left: 20px;
+        text-align: left;
+      
+        
+    }
+    .pinkContent .lowerParagraph2{
+        width: auto;
+        margin-left: 20px;
+        text-align: left;
+        
+      
+        
+    }
+
+    .pinkContent .SeeTheCourse{
+        padding: 12px 24px 12px 24px;
+        width: auto;
+    }
+
+  .comfortEnglish{
+      margin-top: 120px;
+  }
+
+    .comfortEnglish .card-beginner{
+        width: 270px;
+        height: 200px;
+        counter-increment: gallery-cell;
+    }
+    .comfortEnglish .card-title{
+        line-height: 15px;
+    }
+
+    .carousel-cell{
+        width: 270px;
+        height: 200px;
+        margin-right: 10px;
+        position: absolute;
+     
+    }
+    .carousel{
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+  
+
+
+    .policy p{
+        font-size: 12px; 
+        width: 246px;
+     }
+     .policy h4{
+         width: 262px;
+     }
+
+     .policy .container{
+         max-width:400px;
+     }
+
+
+ .lead .fa-chevron-down{
+     font-size: 16px;
+     color: black;
+     right:90%; 
+ } 
+
+ .lead .fa-hourglass-start{
+
+    right:90%;
+  
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+.prices{
+    padding-top: 15px;
+}
+.prices .card{
+    padding:20px;
+    margin-bottom: 25px;
+    width:100%;
+    margin-right: 12px;
+
+
+ 
+}
+
+
+
+.prices  #lowerbodyparagraph{
+    text-align: center;
+
+}
+
+.prices .SeeTheCourse{
+
+    width:100%;
+
+   
+}
+
+.owl-item { 
+    width :min-content !important; 
+}
+
+
+.headlinerConsultation .whiteHeader{
+    font-size: 30px;
+    line-height: 33px;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    width: 100%;
+    margin-right: 20px;
+
+}
+.headlinerConsultation .greyHeader{
+    font-size: 22px;
+    line-height: 24.2px;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    width: 100%;
+    margin-right: 20px;
+    padding-bottom: 25px;
+}
+.cell{
+    width: 270px;
+    height: 270px;
+    background: none;
+
+}
+
+
+
+.homepage{
+    
+    background-image: url("images/HPHeroFace@2x.jpg");
+    background-repeat: no-repeat;
+ background-size: cover;
+ 
+      /* Opera*/
+  height: 716px;
+
+
+ 
+}
+
+.homepage h1{
+  font-size: 48px;
+    line-height: 52.8px;
+    width: auto;
+}
+
+    .teacher-profile{
+ 
+       margin-top: 40px;
+             
+     }
+
+
+     .teacher-profile .cell-item{
+         width: 100%;
+         padding: 0;
+     } 
+     .teacher-profile .headlinerConsultation{
+       width: 100%;
+       height: 688px;
+       border-radius: 40px;
+       background-size: cover;
+       background-color: #FFC340;
+       background-image: url("images/poline-mobile.png");
+       background-repeat: no-repeat;
+       background-position: center bottom;
+       background-size: 60%;
+       padding: 20px;
+   
+       
+   }
+   .button-group{
+       order: 1;
+   }
+  
+
+
+   .teacher-profile .headlinerConsultation2{
+    width: 100%;
+       height: 688px;
+       border-radius: 40px;
+       background-size: cover;
+       background-color:#012A30;
+       background-image: url("images/vladimir1.png");
+       background-repeat: no-repeat;
+       background-position: left bottom;
+       background-size: 60%;
+       padding: 20px;
+       
+   } 
+
+
+.teacher-profile h1{
+   font-size: 30px;
+   line-height: 36px;
+   margin-top: 40px;
+   margin-bottom: 30px;
+   color: #303C4A;
+
+
+}
+
+
+.teacher-profile h3{
+
+margin: 0;
+padding: 0;
+
+}
+
+.teacher-profile p{
+   width: 335px;
+  margin: 10px 0 0 0;
+  padding: 5px;
+  line-height: 24px;
+   letter-spacing: 2%;
+ 
+}
+
+.headlinerConsultation2 h3{
+
+   font-size: 24px;
+   line-height: 36px;
+   color: #FFFFFF;
+   margin-top: 0px;
+  
+}
+
+.teacher-profil .headlinerConsultation2 p{
+   width: 455px;
+   list-style-type:24px;
+   font-size: 16px;
+  
+}
+
+.teacher-profile .register{
+   margin:25px 0 0 0;
+}
+
+
+.why-ahoyla{
+    margin-top:70px;
+}
+.why-ahoyla .card{
+   background-color: #ffffff;
+   width: 335px;
+   height: 335px;
+   border-radius: 40px;
+  padding: 0;
+   align-self: center;
+   border: 1px solid black;
+   margin-top: 80px;
+   display: none;
+}
+
+.why-ahoyla .card-body h3{
+   font-size:22px;
+   width: 188.44px;
+   padding-top: 0;
+   font-family: 'Gilroy';
+   font-weight: bold;
+   color: #303C4A;
+}
+.why-ahoyla .mobile-card{
+    width: 100%;
+    height: 100%;
+    margin-right:20px;
+    margin-left:5px;
+    padding: 0;
+    
+}
+.flickity-button .flickity-prev-next-button .previous{
+    display: none;
+}
+
+.why-ahoyla .card .image{
+ width: 188px;
+ height: auto;
+
+ padding: 0;
+
+}
+
+.why-ahoyla .card .image2{
+    width: 188px;
+    height: auto;
+    margin: 0 0 0 0;
+    padding: 0;   
+
+ }
+
+.why-ahoyla .card-body p{
+   font-size: 16px;
+   width:188.44px;
+   font-family: 'Gilroy';
+   line-height: 24px;
+   margin:0;
+   padding: 0;  
+
+}
+
+.small-bold{
+   font-size: 14px;
+   font-family: 'Gilroy';
+   font-weight: bold;
+   line-height: 21px;
+   letter-spacing: 2%;
+   text-align: center;
+   color: #5B6370;
+ 
+}
+
+
+
+.cell-item {
+   width:335px;
+   height: 688px;
+   margin-right: 40px;
+   background-image: url("../images/card1.png");
+    border-radius: 40px;
+   background: #FFFFFF;
+     position: relative;  
+  
+ }       
+ .cell-item:before {
+   display: block;
+   text-align: center;
+   line-height: 0px;
+   font-size: 80px;
+   color: white;
+ }
+
+
+
+
+
+ .study-item{
+
+      margin-right: 5px;
+  }
+
+
+
+.study-programs{
+   margin-top:120px;
+   height:auto;
+}
+
+
+ .study-programs #carouselEdge{
+      margin-left: 20% !important;
+  } 
+
+
+.study-programs h1{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  color: #303C4A;
+}
+.study-programs .card{
+   width: 306px;
+   height: 388px;
+   margin-right: 0;
+   border-radius: 20px;
+}
+.study-programs .card-img-top{
+   width: 100%;
+   height: 192px;
+}
+.study-programs .card-title{
+text-align: left;  
+font-size: 24px;  
+width:267px ;
+}
+.study-programs .feedbacks{
+   margin-top: 120px;
+  
+}
+
+.faq{
+   margin-top: 50px;
+}
+
+.faq h1{
+    font-size: 30px;
+}
+
+
+.feedbacks .cell p{
+   width: 355px;
+   font-size: 14px;
+   color: black;
+   margin: auto;
+}
+
+
+.feedbacks .cell{
+    width: 306px;
+    height: 545px;
+    margin-right: 5px;
+}
+
+
+
+
+
+.js-player{
+    width:306px;
+    height:545.54px; 
+    border-radius: 40px;
+    margin-bottom: 60px;
+    
+}
+
+
+
+
+        
+    
+
+
+
+
+
+
+
+.secondary-button{
+  padding: 12px 24px 12px 24px;
+  border: 1px solid #303C4A ;
+  border-radius: 100px;
+  background: transparent;
+  height: 44px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Gilroy';
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.secondary-button:hover{
+   background:#AEB1B8;
+}
+
+
+#button-group{
+    display: none;
+}
+
+
+
+
+
+/* .cell img{
+  
+    height: 100%;
+    
+} */
+
+.fa-youtube{
+    top:35%;
+}
+.feedbacks{
+    padding: 0;
+   margin-top: 80px;
+    height: auto;
+}
+.lead .fa-phone{
+font-size: 16px;
+
+}
+
+.lead .fa-phone{
+  right: 90%;
+    
+    }
+    
+  
+.lead .fa-user-graduate{
+    font-size: 16px;
+  
+  
+
+}
+
+.lead .fa-book{
+    font-size: 16px;
+}
+#validateForm{
+    width:335px;
+    height:44px;
+ 
+}
+
+
+.headLiner{
+    padding-top: 0;
+    margin: 0;
+ 
+}
+
+.comfortHeader{
+    font-size: 30px;
+    line-height: 33px;
+    width:fit-content;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    margin: 0 20px 0 20px;
+    text-align: center;
+    color: #303C4A;
+}
+#comfortHeader{
+    margin: auto;
+}
+
+.prices .comfortHeader{
+ padding-bottom:15px;
+}
+
+.word .SeeTheCourse{
+    display:table;
+    margin:45px auto 0 auto;
+}
+
+
+#headLine{
+  margin-top: 60px;
+    
+
+}
+.feedbacks .cell{
+    overflow: visible!important;
+    height: 575px;
+}
+
+   }
+   
+   @media(max-width:320px) {
+       
+       .navbar-brand img {
+           height: 25px;
+           display: none;
+           
+       }
+   
+       
+     
+       .testimonials {
+           display: none;
+       }
+       .RegistrationForm img {
+           display: none;
+       }
+       #registrationRow {
+           margin: 0;
+           width: 100%;
+       }
+    
+       .courseBenifits h1 {
+           font-size: 20px;
+       }
+       .courseBenifits h2 {
+           font-size: 16px;
+           width: 150px;
+       }
+       .courseBenifits p {
+           width: auto;
+       }
+       .aboutInstructor img {
+           width: fit-content;
+           margin: 0;
+       }
+       .courseBenifits .educationProcess .aboutInstructor .courseTarget .listMenus .testimonials .listMenus .startCourse {
+           margin-left: 0;
+           margin-right: 0;
+       }
+
+       #sidebar {
+        width:100%;
+        position: fixed;
+        top: 0;
+        left:-200%;
+        transition: all 0.2s;
+       padding: 20px;
+       height: 100%;
+    
+    }
+
+ 
+
+       
+   
+   }
+   
+   @media (max-width:991px) {
+
+      
+           /*Mobile Navbar */
+           .nav-item #profile-rounded {
+            display: none;
+        }
+        .navbar-collapse.d-none, .navbar-collapse.show {
+            text-align: center;
+        }
+        .navbar-collapse.d-none, .navbar-collapse.show {
+            text-align: center;
+        }
+    
+        .nav-item{
+            font-size: 14px;
+        }
+       
+        #nav-link {
+            display: block;
+        }
+        nav .navbar-image{
+         width: 120px;
+         margin: auto;
+       
+        
+     }
+     nav #navbar-mobile{
+         display: block;
+         
+     }
+     nav #navbar-desktop{
+         display: none;
+        
+     }
+     
+    
+    #navbarArea{
+        width: 100%;
+    }
+    
+     #container-width{
+        width: 100%;
+        margin: auto;
+        display: block;
+    
+        overflow: hidden;
+     }
+    
+    .footer-menu {
+           padding-left: 0
+       }
+       .studyZone .goToCourse {
+           align-self: center;
+       }
+       .nav-item .profile-rounded {
+           display: none;
+       }
+       .navbar-collapse.collapsing, .navbar-collapse.show {
+           text-align: center;
+       }
+       .studyZone {
+           background-size: cover;
+           background-position: center;
+       }
+       .RegistrationForm img {
+           margin: 0;
+       }
+       #registrationRow {
+           margin: auto;
+           width: 90%;
+       }
+
+       #leadBackground{
+           background-size:  30%;
+          background-position: right 7rem;
+     
+     }
+   
+     .lead .leadParagraph {
+       text-align:left;
+       text-indent: -0px;
+       padding-left: 10px;
+       
+         
+    }
+    .lead .sub-text{
+        text-align: left;
+        margin-left: 30px;
+    }
+
+    .pinkContent{
+        width: 100%;
+        height: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 40px;
+        padding-top: 15px;
+        margin: 0;
+
+      
+    }
+   
+    .pinkContent h1{
+     width: auto;
+     
+ }
+ .pinkContent .image{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+     
+ }
+ .pinkContent .pinkContentparagraph{
+     width: auto;
+     
+ }
+ .pinkContent .lowerParagraph{
+     width: auto;
+     
+ }
+
+ .headLiner{
+    padding-top: 10%;
+}
+   .headlinerCenter{
+       width: 100%;
+       margin: 0;
+       padding: 20px;
+       
+   }
+
+   .blackHeader{
+       width: 100%;
+       font-size: 30px;
+       padding-bottom: 10px;
+       color: #303C4A;
+      
+   }
+
+   .whiteHeader{
+       width: 100%;
+       font-size: 22px;
+   }
+
+   
+.headlinerConsultation{
+    width: 100%;
+    height:660px;
+    background-size: cover;
+    background-color: #012A30;
+    background-image: url("images/vladimir1.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 40%;
+
+ 
+    
+}
+
+.headlinerConsultation .whiteHeader{
+
+    width: 100%;
+ 
+
+}
+.headlinerConsultation .greyHeader{
+
+    width: 100%;
+
+}
+.word .SeeTheCourse{
+    display:table;
+    margin:45px auto 0 auto;
+}
+.word h1{
+ text-align: center;
+}
+.word p{
+    text-align: center;
+}
+.fa
+
+
+.policy p{
+    font-size: 12px; 
+    width: 246px;
+ }
+ .policy h4{
+     width: 262px;
+ }
+
+
+.fa-chevron-down{
+ font-size: 21px;
+ color: black;
+} 
+
+
+.pinkContent .lowerParagraph{
+    width: auto;
+    margin-left: 20px;
+  
+    
+}
+.pinkContent .lowerParagraph2{
+    width: auto;
+    margin-left: 20px;
+  
+    
+}
+.beginnerEnglish{
+    background-size: 40%;
+    background-position: 120% bottom;
+}
+.beginnerEnglish .SeeTheCourse{
+margin-bottom: 40px;
+
+margin-left: 20px;
+}
+
+.bannerHeader{
+ 
+    font-size:48px;
+    width: auto;
+
+    }
+
+    
+.homepage h1{
+    font-size: 48px;
+      line-height: 52.8px;
+      width: auto; 
+      margin-left: 20px;
+  
+  }
+
+  .homepage h3{
+    font-size: 22px; 
+    line-height: 24.2px;
+    width: auto;
+    margin-left: 20px;
+
+}
+  
+  .homepage .SeeTheCourse{
+margin-left: 20px;
+     }
+
+.why-ahoyla .card{
+    display: none;
+}
+.teacher-profile .headlinerConsultation h3{
+    text-align: center;
+}
+.teacher-profile .headlinerConsultation p{
+    text-align: center;
+    width: 100%;
+}
+.teacher-profile .headlinerConsultation2 p{
+    text-align: center;
+    width: 100%;
+}
+.teacher-profile .headlinerConsultation2 h3{
+    text-align: center;
+   
+   }
+
+   #testimonialbtn{
+       display: none;
+   }
+
+   .why-ahoyla .card-img-md{
+    background: #FFFFFF;
+    width: 100%;
+    height: 395px;
+    border-radius: 40px;
+    margin-top: 50px;
+}
+.why-ahoyla .card-img-md h1{
+   
+width: 188.44px;
+font-size:20px;
+}
+.why-ahoyla .card-img-md p{
+   
+    width: 188px;
+    height: 216px;
+    font-size: 16px;
+    }
+
+    .why-ahoyla .card-img-md img{
+      
+       max-width: 100%;
+       height: auto;
+        }
+
+    }
+
+
+   @media only screen and (max-width:520px) and (min-width:320px){
+    .bold{
+        font-size: 30px;       
+     
+        padding-top:0px;  
+     
+     }
+
+     .teacher-profile .headlinerConsultation h3{
+        text-align: left!important;
+    }
+    .teacher-profile .headlinerConsultation p{
+        text-align: left!important;
+        width: auto;
+    }
+    .teacher-profile .headlinerConsultation2 p{
+        text-align: left!important;
+        width: auto;
+    }
+    .teacher-profile .headlinerConsultation2 h3{
+        text-align: left!important;
+       
+       }
+ }
+   
+       @media(max-width:520px){
+     #sidebar {
+       width:100%;
+      position: fixed;
+      top: 0;
+      left:-200%;
+      transition: all 0.4s;
+      padding: 20px;
+      height: 100%;
+
+        
+   }
+
+
+
+   .headlinerConsultation{
+    width: 100%;
+    height:660px;
+
+    background-image: url("images/vladimir1.png");
+    background-repeat: no-repeat;
+    background-position: left 105%;
+    background-size: 150%;
+    
+    
+}
+
+    
+.beginnerEnglish{
+    background-size: 75%;
+    height: 90vh;
+    background-position:175% bottom;
+    
+}
+
+}
+       
+
+@media only screen and (max-width: 1140px) and (min-width: 767px) {
+    #lead{
+        background-size: 25%;
+        background-position: right 9rem;
+    }
+
+    .testExpalnation{
+        background-position: left 45%;
+    }
+}
+
+
+    @media (min-width:1367px) and (max-width:1920px)
+    {
+       .homepage{
+        background-repeat:no-repeat;
+        background-size:100%;
+       }
+
+ }
+
+
+ 
+      
+
+   
+   
+     

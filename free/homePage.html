@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"> 
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/css/flickity.css">
+    <link rel="stylesheet" type="text/css" href="../assets/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" type="text/css" 
+    href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
+  
+   <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+     <!-- Jquery and bootstrap js files -->
+    <script src="../assets/js/bootstrap.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../assets/js/sidebar.js"></script>
+    <script src="../assets/js/flickity.min.js"></script>
+    <script src="../assets/js/accordion.js"></script>
+    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+   <!-- Jquery and bootstrap js files End -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ8PB5S37Y"></script>
+  </head>
+  <body>
+      <style>
+          body{
+            background: #f8f8f6; 
+          }
+
+.fa-angle-right{
+  background: #FFFFFF;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 14px;
+  cursor: pointer;}
+.fa-angle-left{
+  background: #FFFFFF;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 14px;
+  margin-left: 20px;
+  cursor: pointer;  
+}
+
+.flickity-button {
+    position: absolute;
+    visibility: hidden;
+    border: none;
+    color: #8c6238 !important;
+}
+.flickity-page-dots {
+  position: absolute;
+    visibility: hidden;
+    border: none;
+    color: #8c6238 !important;
+}
+      </style>
+  
+    <nav id="sidebar">
+      <ul class="list-unstyled components">
+          <p></p>
+          <div id="dismiss">
+              <i class="fas fa-times left"></i>
+          </div>
+          <li id="active" class="active">
+            <a id="active"><i class="fa-fw fas fa-book fa-xs"></i> Программы</a>
+                   <ul  id="homeSubmenu">
+                                 <li>
+                      <a href="en-beginner.html">Английский для начинающих</a>
+                  </li>
+                 <!--  <li>
+                      <a href="#">Английский для среднего уровня</a>
+                  </li> -->
+                  <li>
+                      <a href="https://ahoyla.com/ielts">Подготовка к IELTS</a>
+                  </li>
+              </ul>
+          </li>
+          <li  class="active">
+            <a id="active"><i class="fa-fw fas fa-user-graduate fa-xs"></i>Обучение</a>
+            <ul id="pageSubmenu">
+                <li>
+                    <a class="off-canvas-item" href="https://lms.ahoyla.com/english-beginners">Начальный уровень</a>
+                </li>
+                <li>
+                    <a class="off-canvas-item" href="https://lms.ahoyla.com/english-intermediate">Средний уровень</a>
+                </li>
+                <li>
+                    <a class="off-canvas-item" href="https://lms.ahoyla.com/ielts-course-1">IELTS</a>
+                </li>
+            </ul>
+                                
+          </li>
+          <li class="active">
+              <a href="https://ahoyla.com/"><img class="li-image" src="../images/ahoyla.png" width="20" height="15">Метод обучения Ahoyla</a>
+          </li>
+          <li class="active">
+              <a href="https://lms.ahoyla.com/plans-pricing"><img class="li-image" src="../images/ahoyla.png" width="20" height="12">Тарифные планы</a>
+          </li>
+           </ul>
+            </nav>
+  <div class="overlay"></div> 
+  <div class="homepage">
+    <div class="container">
+      <div class="navbarArea" id="navbarArea">
+        <nav class="navbar navbar-expand-lg navbar-expand-xl navbar-light bg-transparent">
+<!--         
+          <button style="background: transparent; color: black; border: none;" type="button" id="sidebarCollapse" class="mobile-menu">
+            <span class="fas fa-bars"></span>
+          </button> -->
+          <a  class="navbar-brand" style="margin-left: -10px;" href="index.html" id="navbar-desktop">
+       <img id class="navbar-image" src="../images/logo.svg" alt="log">
+      </a>
+ <button style="background: transparent; color: black; border: none;" type="button" id="sidebarCollapse" class="mobile-menu">
+    <span class="fas fa-bars"></span>
+  </button> 
+                  <a class="navbar-brand" href="index.html" id="navbar-mobile">
+                   <img class="navbar-image" src="../images/logo.svg" alt="log">
+                  </a>
+
+                  <li id="nav-link" class="nav-item" href="https://www.lms.ahoyla.com/login">
+                   <a style="color: inherit;" href="https://www.lms.ahoyla.com/login"> <i class="fas fa-user-circle fa-lg"  ></i></a>
+                        </li>
+    
+    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   
+      <ul class="nav navbar-nav">
+  <li class="nav-item dropdown active">
+   <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+     aria-haspopup="true" aria-expanded="false">
+     Программы
+   </a>
+  </li>
+  <li class="nav-item dropdown active">
+   <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+     aria-haspopup="true" aria-expanded="false">
+     Обучение
+   </a>
+
+  </li>
+  <li class="nav-item active">
+   <a class="nav-link" href="#">Тестирование <span
+       class="sr-only">(current)</span></a>
+  </li>
+  </ul>
+  <ul class="navbar-nav ml-auto">
+   <li class="nav-item">
+  
+    <a style="color: inherit;" href="https://www.lms.ahoyla.com/login"> <i class="fas fa-user-circle fa-lg"></i></a>
+   </li>
+   <li class="nav-item active">
+     <a class="nav-link">Your Bookings</a>
+   </li>
+  </ul>
+       </div>
+  </nav>
+    <div class="InitialContent">
+
+    <h1>Заговори на английском за 30 дней </h1>
+    <h3>Занимайся с сильными преподавателями от <br>1 000тг за занятие</h2>
+    <button class="SeeTheCourse">Занимайся</button>
+  </div>
+    
+        </div>
+        </div>
+   </div>
+  <div class="teacher-profile">
+ 
+    <div class="container-fluid ">
+  
+     <h1>Учись у лучших</h1>
+     
+     <div class="container d-lg-none mb-4 text-center">
+      <div class="button-group text-center">
+        <span class="fas fa-angle-left" style="margin-right: 20px;"></span>   
+        <span class="fas fa-angle-right "></span>
+   
+      </div>
+    
+      </div>
+    <div id="carouselEdge" class="carouselLeft"
+    data-flickity='{
+    "prevNextButtons": false, 
+    "pageDots": false }'>
+           <div class="cell-item text-center"> 
+            <div class="headlinerConsultation text-center mx-auto">
+                <div class="row no-gutters ">
+                    <div class="col-md-auto col-lg-3 "></div>
+                  <div class="col-lg-9">
+                  <h3>Полина</h3>
+                  <p >Сертифицированный преподаватель из Лос-Анджелеса (TESOL)</p>
+                  <p>Автор собственной системы изучения языка и трёх учебных пособий</p>
+                  <p> Окончил музыкальный вуз в Лос-Анджелесе, пишет музыку на английском — у него отличный слух и идеальное произношение</p>
+                 <p>Ведёт свой канал на Youtube, на котором уже 6 лет учит реальному английскому</p>
+                  <button class="register">Video Intro <span class="fas fa-play"></span></button>
+                </div>
+
+                  </div>
+                  </div>
+          </div>
+          <div class="cell-item text-center"> 
+            <div class="headlinerConsultation2 text-center mx-auto">
+                <div class="row no-gutters">
+                  <div class="col-md-auto col-lg-3 col-xl-3"></div>
+                  <div class="col-md-12 col-lg-9">
+                    <h3>Vladimir</h3>
+                    <p>Сертифицированный преподаватель из Лос-Анджелеса (TESOL)</p>
+                      <p>Автор собственной системы изучения языка и трёх учебных пособий</p>
+                      <p> Окончил музыкальный вуз в Лос-Анджелесе, пишет музыку на английском — у него отличный слух и идеальное произношение</p>
+                     <p>Ведёт свой канал на Youtube, на котором уже 6 лет учит реальному английскому</p>
+                        <button class="register" >Video Intro <span class="fas fa-play"></span></button>
+                  </div>
+                            </div>
+                        </div>
+          </div>
+        
+       
+        </div>
+  </div>
+  <div class="container">
+  
+    <div class="button-group " id="button-group" style="margin-left:8%;">
+      <span style="margin-top:20px;" class="fas fa-angle-left"></span>
+      <span style="margin-left: 20px;" class="fas fa-angle-right"></span>
+    </div>
+</div>
+
+</div>
+<div class="why-ahoyla">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+  <h2 class="bold">Почему выбирают Ahoyla?</h2>
+    <p class="small-bold">Мы не просто учим английскому, мы учим свободно говорить.<br> 
+      С Ahoyla заговорить как носитель реально.</p>
+</div>
+</div>
+<div class="card-img-md d-lg-none">
+  <div style="width: auto" class="row">
+    
+  
+      <div class="col-7 mt-3">
+        <div class="card-body ml-2 mt-2" style="padding: 0;"> 
+      <h3>Индивидуальный подход</h3>
+     <p class="mt-2">Опираясь на цели и потребности студента, и оценивая его существующие знания языка, наши преподаватели подберут уникальные советы и рекомендации, которые помогут тебе заговорить на английском.</p>
+    </div>    
+  </div>
+  <div class="col-5 mt-5" style="padding: 0;margin-left: -15px;">
+      <img src="../images/mediumCard2.png" style="margin-top: -25px;"> 
+      
+     </div>
+</div>
+</div>
+
+<div class="card-img-md d-lg-none"  style="padding-right: 10px;">
+  <div style="width: auto" class="row">
+    
+    <div style="width:80%;padding: 0;margin-top:30px;" class="col-5">
+      <img src="../images/mediumCard4.png"> 
+      
+     </div>
+     
+     
+     <div class="col-7">
+        <div class="card-body" style="padding: 0;margin-top:50px;"> 
+      <h3>Фокус на целях и результатах </h3>
+     <p>Каждый студент преследует свои цели и задачи в изучении языка. Мы поможем тебе найти свою мотивацию, чтобы не терять интереса к занятиям и достигать заветных результатов.</p>
+    </div>    
+  </div>
+</div>
+</div>
+<div class="card-img-md d-lg-none">
+  <div class="row">  
+      <div class="col-7" style="padding: 0;">
+        <div class="card-body"> 
+      <h3  style="margin-top:10%;">Комфортный темп</h3>
+     <p>Чтобы добиться моксимальной пользы от курса, мы предлагаем тебе индивидуальный план обучения. Составляй персональный график занятий, чтобы учиться когда и где удобно.</p>
+    </div>    
+  </div>
+  <div class="col-5"style="padding: 0; margin-left: -10px;">
+      <img src="../images/mediumCard.png">       
+     </div>
+</div>
+</div>
+<div class="card-img-md d-lg-none">
+  <div class="row">
+    <div  class="col-5">
+      <img style="width:125px;padding: 0;margin-left: -10px;margin-top: 40px;" src="../images/mediumCard3.png"> 
+       </div>
+       <div class="col-7">
+        <div class="card-body" style="padding: 0;margin-left: -20px;margin-top: 70px;"> 
+      <h3>Лучший учебный опыт</h3>
+     <p>Опыт обучения с Ahoyla - это живые лекции в небольших группах, превосходное качество видео и аудио учебных материалов.</p>
+    </div>    
+  </div>
+</div>
+</div>
+<div class="card ml-auto mr-auto">
+  <div class="row">
+    <div  class="col-md-8  mt-4">
+       <div class="card-body">
+            <h3>Индивидуальный подход</h3>
+           <p>Опираясь на цели и потребности студента, и оценивая его существующие знания языка, наши преподаватели подберут уникальные советы и рекомендации, которые помогут тебе заговорить на английском.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+       <div class="image" id="image">
+      <img src="../images/why1.png"> 
+      </div> 
+  </div>
+  </div>
+</div>
+  <div class="card ml-auto mr-auto">
+    <div class="row">
+        <div class="col-md-5">
+        <img class="image2" src="../images/why2.png"> 
+          </div>
+         <div  class="col-md-7  mt-4">
+       <div class="card-body">
+            <h3>Фокус на целях и результатах </h3>
+           <p>Каждый студент преследует свои цели и задачи в изучении языка. Мы поможем тебе найти свою мотивацию, чтобы не терять интереса к занятиям и достигать заветных результатов.</p>
+              </div>
+            </div>
+  </div>
+  </div>
+  <div class="card ml-auto mr-auto">
+    <div class="d-flex row no-gutters">
+      <div class="col-md-8  mt-4">
+       <div class="card-body">
+            <h3>Комфортный темп </h3>
+           <p>Чтобы добиться моксимальной пользы от курса, мы предлагаем тебе индивидуальный план обучения. Составляй персональный график занятий, чтобы учиться когда и где удобно.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+       <div class="image3" id="image">
+      <img src="../images/why3.png"> 
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="card ml-auto mr-auto">
+    <div class="d-flex row no-gutters">
+            <div class="col-md-4 ">
+            <div class="image4" id="image">
+           <img src="../images/why4.png"> 
+           </div>
+         </div>
+         <div  class="col-md-8  mt-4">
+       <div class="card-body">
+            <h3>Лучший учебный опыт</h3>
+           <p>Опыт обучения с Ahoyla - это живые лекции в небольших группах, превосходное качество видео и аудио учебных материалов. </p>
+              </div>
+            </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="study-programs">
+    <div class="container-fluid">
+      <div id="container-width">
+                <h1>Программы обучения</h1>   
+
+        <div id="carouselId" class="carousel2 center-cell no-gutters"
+        data-flickity='{
+          "contain":true,
+        "prevNextButtons": false, 
+        "pageDots": false }'>
+          <div class="study-item text-center"> 
+       
+            <div class="card">
+                <img class="card-img-top" src="../images/study-card.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Aнглийский язык
+                    для начинающих</h5>
+                    <button class="secondary-button mt-5">Узнать больше</button>
+                </div>
+              </div>
+            
+</div>
+<div class="study-item text-center"> 
+       
+              <div class="card">
+                <img class="card-img-top" src="../images/study-card.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Aнглийский язык
+                    для продолжающих </h5>
+                
+                    <button class="secondary-button mt-5">Узнать больше</button>
+
+                </div>
+              </div>
+
+</div>
+<div class="study-item text-center"> 
+
+              <div class="card">
+                <img class="card-img-top" src="../images/study-card.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">ELTS подготовительный  </h5><br>
+                  <button class="secondary-button mt-5">Узнать больше</button>
+                </div>
+              </div>
+           
+              </div>
+
+
+            </div>
+
+         
+
+        </div>
+        </div>
+
+</div>
+<div class="feedbacks" id="feedbacks">
+    <div class="container-fluid">
+      <h1 class="comfortHeader" id="comfortHeader">Отзывы</h1>
+      <div id="container-width">
+      <div style="margin-top: 50px;" class="carouselLeft2"
+      data-flickity='{ "draggable": true }'>
+      <div class="cell">          
+
+      <video playsinline controls data-poster="/path/to/poster.jpg">
+        <source src="../videos/video.mp4" type="video/mp4" />
+       </video>
+ 
+       <h3>Саша</h3>
+      </div>
+     <div class="cell">
+
+
+    
+      <video playsinline controls data-poster="/path/to/poster.jpg">
+        <source src="../videos/video2.mp4" type="video/mp4" />
+   
+       </video>
+       <h3>Миранда</h3>
+  
+ 
+
+    </div>
+    <div class="cell">
+     
+             
+      <video   playsinline controls data-poster="/path/to/poster.jpg">
+        <source src="../videos/video3.mp4" type="video/mp4" />
+       </video>
+       <h3>Матвей</h3>
+</div>
+<div class="cell">
+<video  playsinline controls data-poster="/path/to/poster.jpg">
+  <source src="../videos/video4.mp4" type="video/mp4" />
+ </video>
+ <h3>Болат</h3>
+</div>
+    </div>
+    <div class="control-buttons">
+    <span style="margin-top: 0;" class=" fas fa-angle-left" id="testimonialbtn"></span>
+    <span style="margin-left: 20px;" class="fas fa-angle-right" id="testimonialbtn"></span>
+  </div>
+  </div>
+</div>
+  </div>
+ 
+ <div  class="headLiner2" id="headLine">
+    <div class="container-fluid">
+    
+            <div class="headlinerCenter text-center ml-auto mr-auto">
+                <div class="row no-gutters align-items-center justify-content-center h-100 ">
+                 <div class="col-md-12">
+                  <h2 class="blackHeader">Записывайтесь на бесплатную консультацию</h2>
+                  <h2 class="whiteHeader">Познакомим со школой и покажем, как проходят занятия</h2>
+                  <button class="register">Записаться</button>
+                </div>
+               
+              </div>
+
+         
+          </div>
+ 
+  </div>
+   <div class="faq">
+    <div class="container">
+      <div id="container-width">
+      <h1>FAQ</h1>
+      <ul class="accordion-list">
+        <li>
+          <h3>Что нужно что бы приступить к занятиям?</h3>
+          <div class="answer">
+            <p>Для этого нужен компьютер, планшет или телефон. Уроки проходят онлайн и для подключения к живому уроку вам нужно зарегистрироваться в нашей платформе.</p>
+            
+       
+          </div>
+        </li>
+        <li>
+          <h3>Есть ли в возрастные ограничения?</h3>
+          <div class="answer"><p>Нет, мы разделяем только по уровню владения английским. У нас занимаются и дети и взрослые. </p></div>
+        </li>
+        <li>
+          <h3>Сколько длится занятие?</h3>
+          <div class="answer"><p>Продолжительность одного урока 1 академический час. Мы делаем уроки насыщенными и ёмкими, чтобы тебе легко было выделить время на занятия и нагрузка была посильной. </p></div>
+        </li>
+        <li>
+          <h3>Когда я могу начать?</h3>
+          <div class="answer"><p>Начать вы можете в любое время! Наши преподаватели всегда готовы и ждут новых студентов. </p></div>
+        </li>
+     
+      </ul>
+    </div>
+  </div>
+  </div> 
+  <footer class="footer-area footer--light">
+    <div class="footer-big">
+      <!-- start .container -->
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="footer-widget">
+            <div class="widget-about">
+              <img src="../images/logowhite.png" alt="footer-logo" width="105" height="68" class="img-fluid">
+              <div class="row">
+                <a style="color: #fff;" class="nav-link" href="https://www.lms.ahoyla.com/ielts-course-1">Подготовка к IELTS</a>
+                <a style="color: #fff;" class="nav-link" href="ielts.html">Study Zone</a>
+              </div>
+              <div class="row">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+              </div>
+  
+              <a style="color: #fff;" class="nav-link" href="hello@ahoyla.com">hello@ahoyla.com </a>
+              <a style="color: #fff;" class="nav-link">Krakovská 1391/5, 110 00 Prague</a>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script>
+const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+$(".plyr__control--overlaid").click(function() { 
+    $(".plyr__controls").show();});
+$(".plyr__controls").hide();
+const supported = Plyr.supported('video', 'html5', true);
+var $carousel = $('.carousel').flickity()
+var $cellElems = $('<div class="cell">...</div>');
+  $carousel.flickity( 'insert', $cellElems,0);
+var $carouselId = $('#carouselId').flickity({
+  cellAlign: 'center',
+  contain: true
+})
+var $carouselLeft = $('.carouselLeft').flickity({
+cellAlign:'centerInnerLeft',
+
+})
+var $carouselLeft2 = $('.carouselLeft2').flickity({
+ cellAlign:'centerLeft',
+ wrapAround:true,
+})
+// previous
+$('.fa-angle-right').on( 'click', function() {
+  $carousel.flickity('next');
+});
+ $('.fa-angle-left').on( 'click', function() {
+   $carousel.flickity('previous');
+ });
+
+$('.fa-angle-right').on( 'click', function() {
+  $carouselLeft.flickity('previous');
+});
+ $('.fa-angle-left').on( 'click', function() {
+   $carouselLeft.flickity('next');
+ });
+$('.fa-angle-right').on( 'click', function() {
+  $carouselLeft2.flickity('next');
+});
+ $('.fa-angle-left').on( 'click', function() {
+   $carouselLeft2.flickity('previous');
+});
+
+
+
+// $('.carouselLeft').flickity(options);
+//     var $slider = $container.find('.carouselLeft');
+//     var flkty = $slider.data('flickity');
+//     var selectedIndex = flkty.selectedIndex;
+//     var slideCount = flkty.slides.length;
+//     var $prev = $container.find('.fa-angle-left');
+//     var $next = $container.find('.fa-angle-right');
+//     $prev.on('click', function() {
+//       $slider.flickity('previous');
+//     });
+//     // next
+//     $next.on('click', function() {
+//       var $next = $container.find('.fa-angle-right');
+//     });
+//     $slider.on('select.flickity', function() {
+//       // enable/disable previous/next buttons
+//       if (!flkty.slides[flkty.selectedIndex - 1]) {
+//         $prev.attr('disabled', 'disabled');
+//         $next.removeAttr('disabled'); // <-- remove disabled from the next
+//       } else if (!flkty.slides[flkty.selectedIndex + 1]) {
+//         $next.attr('disabled', 'disabled');
+//         $prev.removeAttr('disabled'); //<-- remove disabled from the prev
+//       } else {
+//         $prev.removeAttr('disabled');
+//         $next.removeAttr('disabled');
+//       }
+//     });
+</script> 
+  </body>
